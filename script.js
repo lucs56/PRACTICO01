@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Datos de ejemplo para los equipos de fútbol, incluyendo las rutas de las imágenes de los logos
     const equipos = [
-        { nombre: "Independiente", pais: "Argentina", entrenador: "Carlos Tévez", logo: "fotos escudos/independiente.jpeg", copas: 18},
-        { nombre: "Boca Juniors", pais: "Argentina", entrenador: "Diego Martínez", logo: "fotos escudos/boca.jpeg", copas: 13},
-        { nombre: "River Plate", pais: "Argentina", entrenador: "Martín Demichelis", logo: "fotos escudos/river.jpeg", copas: 12},
-        { nombre: "Racing Club", pais: "Argentina", entrenador: "Gustavo Costas", logo: "fotos escudos/racing.jpeg", copas: 9},
-        { nombre: "San Lorenzo", pais: "Argentina", entrenador: "Eduardo Coudet", logo: "fotos escudos/san lorenzo.jpeg", copas: 6},
-        { nombre: "Vélez Sarsfield", pais: "Argentina", entrenador: "Mauricio Pellegrino", logo: "fotos escudos/velez.jpeg", copas: 5},
-        { nombre: "Rosario Central", pais: "Argentina", entrenador: "Leonardo Astrada", logo: "fotos escudos/rosario.jpeg", copas: 4},
-        { nombre: "Newell's Old Boys", pais: "Argentina", entrenador: "Diego Dabove", logo: "fotos escudos/newells.jpeg", copas: 6},
-        { nombre: "Estudiantes", pais: "Argentina", entrenador: "Pablo Guede", logo: "fotos escudos/estudiantes.jpeg", copas: 5},
-        { nombre: "Lanús", pais: "Argentina", entrenador: "Luis Zubeldía", logo: "fotos escudos/lanus.jpeg", copas: 3},
-        { nombre: "Banfield", pais: "Argentina", entrenador: "Julio Falcioni", logo: "fotos escudos/banfield.jpeg", copas: 1},
-        { nombre: "Gimnasia y Esgrima La Plata", pais: "Argentina", entrenador: "Leandro Somoza", logo: "fotos escudos/gimnasia.jpeg", copas: 2}
+        { nombre: "Independiente", pais: "Argentina", entrenador: "Carlos Tévez", logo: "fotos escudos/independiente.jpeg", copas: 18, fundado: 1905},
+        { nombre: "Boca Juniors", pais: "Argentina", entrenador: "Diego Martínez", logo: "fotos escudos/boca.jpeg", copas: 13, fundado: 1905},
+        { nombre: "River Plate", pais: "Argentina", entrenador: "Martín Demichelis", logo: "fotos escudos/river.jpeg", copas: 12, fundado: 1901},
+        { nombre: "Racing Club", pais: "Argentina", entrenador: "Gustavo Costas", logo: "fotos escudos/racing.jpeg", copas: 9, fundado: 1903},
+        { nombre: "San Lorenzo", pais: "Argentina", entrenador: "Eduardo Coudet", logo: "fotos escudos/san lorenzo.jpeg", copas: 6, fundado: 1908},
+        { nombre: "Vélez Sarsfield", pais: "Argentina", entrenador: "Mauricio Pellegrino", logo: "fotos escudos/velez.jpeg", copas: 5, fundado: 1910},
+        { nombre: "Rosario Central", pais: "Argentina", entrenador: "Leonardo Astrada", logo: "fotos escudos/rosario.jpeg", copas: 4, fundado: 1889},
+        { nombre: "Newell's Old Boys", pais: "Argentina", entrenador: "Diego Dabove", logo: "fotos escudos/newells.jpeg", copas: 6, fundado: 1903},
+        { nombre: "Estudiantes", pais: "Argentina", entrenador: "Pablo Guede", logo: "fotos escudos/estudiantes.jpeg", copas: 5, fundado: 1905},
+        { nombre: "Lanús", pais: "Argentina", entrenador: "Luis Zubeldía", logo: "fotos escudos/lanus.jpeg", copas: 3, fundado: 1915},
+        { nombre: "Banfield", pais: "Argentina", entrenador: "Julio Falcioni", logo: "fotos escudos/banfield.jpeg", copas: 1, fundado: 1896},
+        { nombre: "Gimnasia y Esgrima La Plata", pais: "Argentina", entrenador: "Leandro Somoza", logo: "fotos escudos/gimnasia.jpeg", copas: 2, fundado: 1887},
         // Agrega más equipos según sea necesario
     ];
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear la sección de encabezado de la tabla
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        const headers = ['Foto del Logo', 'Equipo', 'País', 'Entrenador', 'Copas']; // Títulos de las columnas
+        const headers = ['Foto del Logo', 'Equipo', 'País', 'Entrenador', 'Copas', 'Año de Fundación']; // Títulos de las columnas
     
         // Crear celdas de encabezado para cada título de columna
         headers.forEach(headerText => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             row.appendChild(imgCell); // Agregar la celda a la fila
     
             // Crear celdas para el nombre del equipo, país, entrenador y copas
-            const equipoData = [equipo.nombre, equipo.pais, equipo.entrenador, equipo.copas];
+            const equipoData = [equipo.nombre, equipo.pais, equipo.entrenador, equipo.copas, equipo.fundado];
             equipoData.forEach(text => {
                 const td = document.createElement('td');
                 td.textContent = text; // Establecer el texto de la celda
